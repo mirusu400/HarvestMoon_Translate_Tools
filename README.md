@@ -27,7 +27,8 @@ If you need my help for localization about HM series(above DS), please e-mail to
 # 3DS
 ## Story of Seasons Trio of Towns (SoS_ToT)
 - 목장이야기 세 마을의 소중한 친구들
-- Already [Kuriimu](https://github.com/IcySon55/Kuriimu) has a plugin to PAPA plag, but it's not compatable with USA version.
+- Already [Kuriimu](https://github.com/IcySon55/Kuriimu) has a plugin to modify PAPA plag, but it's not compatable with USA version cause of Encode Issue.
+- USA version uses Shift-Jis Encode, but JPN version uses UTF16LE Encode.
 
 
 # TODO
