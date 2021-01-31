@@ -1,4 +1,4 @@
-# HarvestMoon_Localization_Tools
+# HarvestMoon Localization Tools
 [DS] HarvestMoon Series TBL and Text Tools For Translation
 
 If you need my help for localization about HM series(above DS), please e-mail to me.
@@ -19,7 +19,7 @@ If you need my help for localization about HM series(above DS), please e-mail to
 
 ## Harvest Moon The Tale of Two Towns (HM_TTOTT)
 - 목장이야기 쌍둥이마을
-- Tools are used with HM_GB
+- GB and TToTT Use same pack/unpacker and scripter.
 - `Binpack` and `Binunpack` are used to unpack `*.bin` files
 - `HM_Txt_to_Script.py` and `HM_Script_to_Txt.py` are used to extract script to text. They need custom encode table such as HM_SS.
 
@@ -32,8 +32,8 @@ If you need my help for localization about HM series(above DS), please e-mail to
 
 
 # TODO
-- upload SoS_ToT PAPA file to xlsx
-- upload structure of such things
+- upload SoS_ToT PAPA file to xlsx.
+- upload documentation of structures.
 
 
 
