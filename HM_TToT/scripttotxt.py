@@ -13,6 +13,7 @@ GB_FLAG = 2
 POINTER_FLAG = GB_FLAG
 TBLFILE = './HM_TToT/TToT_jpn.tbl'
 
+
 class table():
     def __init__(self, file):
         self.file = file
