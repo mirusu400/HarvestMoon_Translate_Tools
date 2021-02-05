@@ -10,18 +10,19 @@ If you need my help for localization about HM series(above DS), please e-mail to
 
 ## Harvest Moon Sunshine Islands (HM_SS)
 - 목장이야기 반짝반짝 태양과 동료들
+- Some of the files are archived with bin, you can unpack/pack them as `binpacker`
 - Only Support JPN version, and need a custom encode table. If you need USA/EUR version, You may need to uncompress lz11 and change custom encode table.
-- Source code looks like stupid.
+
 
 ## Harvest Moon Grand Bazzar (HM_GB)
 - 목장이야기 어서오세요! 바람의 바자르에
-- Tools are same as HM_TToT, Only updated Graphics Info.
+- Some of the files are archived with bin, you can unpack/pack them as `binpacker`
+- Text tools are same as HM_TToT, Only updated Graphics Info.
 
 ## Harvest Moon The Tale of Two Towns (HM_TTOTT)
 - 목장이야기 쌍둥이마을
-- GB and TToTT Use same pack/unpacker and scripter.
-- `Binpack` and `Binunpack` are used to unpack `*.bin` files
-- `HM_Txt_to_Script.py` and `HM_Script_to_Txt.py` are used to extract script to text. They need custom encode table such as HM_SS.
+- Some of the files are archived with bin, you can unpack/pack them as `binpacker`
+- `scripttotext.py` and `texttoscript.py` are used to extract/import between script and text. They need custom encode table such as HM_SS.
 
 
 # 3DS
