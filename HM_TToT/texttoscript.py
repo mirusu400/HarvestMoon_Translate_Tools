@@ -85,8 +85,8 @@ def convert(file, tbl):
                 texts.append(line.replace("\n", ""))
     for i in range(count):
         text = texts[i]
-        outbuf = ""
         tmp = []
+        outbuf = ""
 
         # Get hexes in one line
         for idx, char in enumerate(text):
@@ -96,40 +96,33 @@ def convert(file, tbl):
             # If char starts with '[' (제어코드)
             if char == "[":
                 tidx = idx
+                tmp.append(tidx)
                 while True:
                     tidx += 1
                     tmp.append(tidx)
                     tbuf += text[tidx]
                     if text[tidx] == "]":
                         break
-                tbuf.replace("]", "")
-                outbuf += tbuf
-
+                tbuf = tbuf.replace("]", "")
             else:
                 tbuf = tbl.cv(char)
-            outbuf += tbl.cv(char)
+            outbuf += tbuf
 
         size.append(len(outbuf))
         hexs.append(outbuf)
 
         if i != 0:
-            pos.append((count * POINTER_FLAG) + size[i-1])
+            pos.append(pos[i-1] + (size[i-1] // 2))
         else:
             pos.append(count * POINTER_FLAG)
 
     with open(out, "wb") as f:
-        # Write count
-        if POINTER_FLAG == GB_FLAG:
-            writeshort(count)
-        elif POINTER_FLAG == TTOT_FLAG:
-            writeint(count)
-
         # Write pointer(position)
         for i in range(count):
             if POINTER_FLAG == GB_FLAG:
-                writeshort(pos[i])
+                f.write(writeshort(pos[i]))
             elif POINTER_FLAG == TTOT_FLAG:
-                writeint(pos[i])
+                f.write(writeint(pos[i]))
 
         for i in range(count):
             chex = hexs[i]
