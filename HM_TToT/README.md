@@ -1,7 +1,12 @@
 # Harvest Moon - Two Tale of Two Towns
 
-* `binUnpack.py` : To unpack *.bin files in TToT / GB
-* `binPack.py` : To pack files into *.bin for TToT / GB
+### 1. Unpack Bin
+* `/binpacker/binunpack.py` : To unpack *.bin files in TToT / GB
+* `/binpacker/binpack.py` : To pack files into *.bin for TToT / GB
+
+### 2. Extract Text From *.hav
+* 'scripttotxt.py [TBL file] [*.hav file or dir]` : Convert *.hav to *.txt
+* 'txttoscript.py [TBL file] [*.txt file or dir]` : Convert *.txt to *.hav
 
 ---
 ## Deprecated!

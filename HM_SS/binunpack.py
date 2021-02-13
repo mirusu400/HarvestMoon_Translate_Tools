@@ -14,15 +14,21 @@ def unpack(file, outdir):
     poses = []
     sizes = []
 
+    # Get position(pointer)
     for i in range(count):
-        file.seek(0x04 + (0x08 * i))
+        file.seek(0x04 + (0x04 * i))
         poses.append(readint(file))
-        sizes.append(readint(file))
-    print(sizes)
-    input()
+
+    # Get size
+    for i in range(count):
+        if i != count-1:
+            sizes.append(poses[i+1] - poses[i])
+        else:
+            sizes.append(os.path.getsize(file) - poses[i])
+
     for i in range(count):
         oname = outdir + "/" + fname + str(i).zfill(4) + ".hav"
-        pos = 0x04 + (0x08 * count) + poses[i]
+        pos = poses[i]
         size = sizes[i]
         file.seek(pos)
         buffer = file.read(size)

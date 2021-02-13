@@ -10,7 +10,6 @@ If you need my help for localization about HM series(above DS), please e-mail to
 
 ## Harvest Moon Sunshine Islands (HM_SS)
 - 목장이야기 반짝반짝 태양과 동료들
-- Some of the files are archived with bin, you can unpack/pack them as `binpacker`
 - Only Support JPN version, and need a custom encode table. If you need USA/EUR version, You may need to uncompress lz11 and change custom encode table.
 
 

@@ -25,14 +25,16 @@ class table():
         with open(self.file, "r", encoding="utf-8") as f:
             while True:
                 line = f.readline()
-                line = line.replace("\n", "").split("=")
-                if (line == ['']):
+                tline = line.replace("\n", "").split("=")
+                if (tline == ['']):
                     break
                 # BOM Error fix
-                line[0] = line[0].replace(u"\ufeff", '')
-                self.tblword.append(line[1])
-                self.tblhex.append(line[0])
-
+                tline[0] = tline[0].replace(u"\ufeff", '')
+                if line[-1] == "=":
+                    self.tblword.append(line[-1])
+                else:
+                    self.tblword.append(tline[1])
+                self.tblhex.append(tline[0].upper())
         return
 
     def cv(self, char):
@@ -56,7 +58,7 @@ def readshort(file):
 
 
 def readint(file):
-    return s.unpack("<I", file.read(2))[0]
+    return s.unpack("<I", file.read(4))[0]
 
 
 def writeint(num):
@@ -132,13 +134,15 @@ def convert(file, tbl):
 
 
 if __name__ == '__main__':
+    TBLFILE = sys.argv[1]
+    TINPUT = sys.argv[2]
     t = table(TBLFILE)
 
-    if os.path.isdir(sys.argv[1]):
-        file_list = os.listdir(sys.argv[1])
+    if os.path.isdir(TINPUT):
+        file_list = os.listdir(TINPUT)
         for file in file_list:
-            ofile = str(sys.argv[1]) + "/" + str(file)
+            ofile = str(TINPUT) + "/" + str(file)
             convert(ofile, t)
     else:
-        convert(sys.argv[1], t)
+        convert(TINPUT, t)
 
