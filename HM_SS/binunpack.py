@@ -13,6 +13,11 @@ def unpack(file, outdir):
     count = readint(file)
     poses = []
     sizes = []
+    
+    file_length = 0
+    file.seek(0, os.SEEK_END)
+    file_length = file.tell()
+    file.seek(0, os.SEEK_SET)
 
     # Get position(pointer)
     for i in range(count):
@@ -24,7 +29,7 @@ def unpack(file, outdir):
         if i != count-1:
             sizes.append(poses[i+1] - poses[i])
         else:
-            sizes.append(os.path.getsize(file) - poses[i])
+            sizes.append(file_length - poses[i])
 
     for i in range(count):
         oname = outdir + "/" + fname + str(i).zfill(4) + ".hav"
