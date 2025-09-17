@@ -1,3 +1,7 @@
+"""
+This is a script for packing and unpacking MessageData.bin
+"""
+
 import sys
 import os
 import struct as s
@@ -37,9 +41,9 @@ class MessageData:
                 sizes.append(poses[i + 1] - poses[i])
             else:
                 sizes.append(file_length - poses[i])
-
+        basename = os.path.splitext(os.path.basename(src))[0]
         for i in range(count):
-            oname = outdir + "/" + src + str(i).zfill(4) + ".hav"
+            oname = outdir + "/" + basename + str(i).zfill(4) + ".hav"
             pos = poses[i]
             size = sizes[i]
             file.seek(pos)

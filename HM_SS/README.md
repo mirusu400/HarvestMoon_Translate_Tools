@@ -1,5 +1,8 @@
 # Harvest Moon Sunshine Islands (JPN ver.)
 
+### Description
+
+
 ### NDS file structure
 ```bash
 rom

@@ -46,8 +46,10 @@ class ItemMessage:
             else:
                 sizes.append(file_length - offsets[i])
 
+        basename = os.path.splitext(os.path.basename(src))[0]
+
         for i in range(count):
-            oname = outdir + "/" + src + str(i).zfill(4) + ".hav"
+            oname = outdir + "/" + basename + str(i).zfill(4) + ".hav"
             pos = 0x02 + (0x02 * len(offsets)) + (0x02 * len(indexs)) + offsets[i]
             size = sizes[i]
             file.seek(pos)
